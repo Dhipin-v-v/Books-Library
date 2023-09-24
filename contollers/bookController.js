@@ -59,7 +59,6 @@ export const updateBook = async (req, res) => {
 // Controller function to delete a specific book
 export const deleteBook = async (req, res) => {
   try {
-    const { title, author } = req.body
     const deletedBook = await Books.findByIdAndRemove(req.params.id)
     if (!deletedBook) {
       return res.status(404).json({ error: 'Book not found' })
